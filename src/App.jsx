@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* App Container - Transparent to show Body BG */}
-      <div className="relative z-0 bg-transparent w-full min-h-screen overflow-x-hidden">
+      <div className="relative z-0 bg-primary w-full min-h-screen overflow-x-hidden">
 
         {/* Global 3D Background - Fixed behind everything */}
         <div className="fixed inset-0 z-[-1] bg-primary">
