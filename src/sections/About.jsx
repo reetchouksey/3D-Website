@@ -54,7 +54,6 @@ const About = () => {
             </motion.p>
 
             {/* 3D Scroll Container */}
-            {/* 3D Scroll Container */}
             <div
                 ref={scrollRef}
                 className="mt-20 flex flex-nowrap overflow-x-auto gap-10 py-10 px-10 snap-x snap-mandatory hide-scrollbar perspective-container"

@@ -74,7 +74,6 @@ const ExperienceCard = ({ experience, index }) => {
                 style={{ transformStyle: "preserve-3d" }}
                 onClick={() => setIsFlipped(!isFlipped)}
             >
-                {/* Front Side */}
                 <div
                     className="flex flex-col md:flex-row gap-4 bg-transparent backdrop-blur-md p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-colors duration-300 backface-hidden"
                     style={{ backfaceVisibility: "hidden" }}
@@ -106,7 +105,6 @@ const ExperienceCard = ({ experience, index }) => {
                     </div>
                 </div>
 
-                {/* Back Side */}
                 <div
                     className="absolute inset-0 bg-[#1d1836]/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 flex flex-col justify-center backface-hidden"
                     style={{

@@ -24,7 +24,6 @@ const App = () => {
         {/* Main Content - Scrollable */}
         <div className="relative z-10 text-white">
           <div className="bg-transparent bg-contain bg-no-repeat bg-center">
-            {/* Navbar removed as it does not exist */}
             <Hero />
           </div>
 
