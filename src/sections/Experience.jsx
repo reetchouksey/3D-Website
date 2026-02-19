@@ -139,7 +139,7 @@ const Experience = () => {
                 <h2 className={styles.sectionHeadText}>Work Experience</h2>
             </motion.div>
 
-            <div className="mt-20 flex flex-col relative">
+            <div className="mt-20 flex flex-col relative gap-8">
 
                 <div className="absolute left-4 md:left-12 top-0 bottom-0 w-0.5 bg-slate-700 md:hidden" />
 

@@ -15,6 +15,8 @@ body,
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
+  /* Adjust height for horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -24,4 +26,16 @@ body,
 ::-webkit-scrollbar-thumb {
   background: #915eff;
   border-radius: 5px;
+}
+
+/* Utility to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

@@ -34,9 +34,8 @@ const testimonials = [
 ];
 
 const FeedbackCard = ({ index, testimonial, name, designation, company, image, email }) => (
-    <motion.div
-        variants={fadeIn("", "spring", index * 0.5, 0.75)}
-        className="bg-black-200/50 backdrop-blur-md p-10 rounded-3xl xs:w-[320px] w-full border border-white/10"
+    <div
+        className="bg-black-200/50 backdrop-blur-md p-10 rounded-3xl xs:w-[320px] w-full border border-white/10 margin-left-10"
     >
         {/* Replaced Quote with Name */}
         <p className="text-white font-bold text-[24px]">{name}</p>
@@ -62,7 +61,7 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image, e
                 />
             </div>
         </div>
-    </motion.div>
+    </div>
 );
 
 const Feedbacks = () => {
@@ -76,7 +75,7 @@ const Feedbacks = () => {
                     <h2 className={styles.sectionHeadText}>Testimonials</h2>
                 </motion.div>
             </div>
-            <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
+            <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-col gap-7`}>
                 {testimonials.map((testimonial, index) => (
                     <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
                 ))}

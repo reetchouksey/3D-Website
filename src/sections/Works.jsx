@@ -1,4 +1,4 @@
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -48,7 +48,10 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
-                options={{ max: 45, scale: 1, speed: 450 }}
+                tiltMaxAngleX={45}
+                tiltMaxAngleY={45}
+                scale={1}
+                transitionSpeed={450}
                 className="bg-tertiary/60 backdrop-blur-md p-5 rounded-2xl sm:w-[360px] w-full border border-white/10"
             >
                 <div className="relative w-full h-[230px]">
@@ -110,9 +113,11 @@ const Works = () => {
                 </motion.p>
             </div>
 
-            <div className="mt-20 flex flex-wrap gap-7">
+            <div className="mt-20 flex flex-nowrap xl:justify-center justify-start gap-7 overflow-x-auto pb-10 xl:pb-0 snap-x snap-mandatory hide-scrollbar">
                 {projects.map((project, index) => (
-                    <ProjectCard key={`project-${index}`} index={index} {...project} />
+                    <div key={`project-${index}`} className="flex-shrink-0 w-full lg:w-auto snap-center">
+                        <ProjectCard index={index} {...project} />
+                    </div>
                 ))}
             </div>
         </>

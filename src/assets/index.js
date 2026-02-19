@@ -11,6 +11,9 @@ import figma from "./tech/figma.png";
 import docker from "./tech/docker.png";
 import threejs from "./tech/threejs.png";
 
+import menu from "./menu.svg";
+import close from "./close.svg";
+
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -31,4 +34,6 @@ export {
     figma,
     docker,
     threejs,
+    menu,
+    close,
 };
