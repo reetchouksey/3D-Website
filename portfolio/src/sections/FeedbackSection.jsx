@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import SectionWrapper from "../hoc/SectionWrapper";
@@ -55,12 +55,21 @@ const ReviewCard = ({ name, rating, comment, index }) => (
 );
 
 const FeedbackSection = () => {
-    const [form, setForm] = useState({ rating: 0, comment: "", name: "" });
-    const [userFeedbacks, setUserFeedbacks] = useState([
+    const defaultFeedbacks = [
         { name: "John Doe", rating: 5, comment: "Amazing portfolio! The 3D effects are incredibly smooth." },
         { name: "Anna Smith", rating: 4, comment: "I really like the tech stack section. Great work overall!" },
         { name: "Rahul Mehta", rating: 5, comment: "One of the best developer portfolios I have ever seen!" },
-    ]);
+    ];
+
+    const [form, setForm] = useState({ rating: 0, comment: "", name: "" });
+    const [userFeedbacks, setUserFeedbacks] = useState(() => {
+        try {
+            const saved = localStorage.getItem("portfolio_feedbacks");
+            return saved ? JSON.parse(saved) : defaultFeedbacks;
+        } catch {
+            return defaultFeedbacks;
+        }
+    });
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
@@ -71,10 +80,10 @@ const FeedbackSection = () => {
         e.preventDefault();
         setLoading(true);
         setTimeout(() => {
-            setUserFeedbacks([
-                { name: form.name || "Anonymous", rating: form.rating, comment: form.comment },
-                ...userFeedbacks,
-            ]);
+            const newFeedback = { name: form.name || "Anonymous", rating: form.rating, comment: form.comment };
+            const updated = [newFeedback, ...userFeedbacks];
+            setUserFeedbacks(updated);
+            try { localStorage.setItem("portfolio_feedbacks", JSON.stringify(updated)); } catch { }
             setLoading(false);
             setSubmitted(true);
             setForm({ rating: 0, comment: "", name: "" });
