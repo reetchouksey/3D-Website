@@ -19,7 +19,8 @@ const Contact = () => {
                         <span className="block mb-4 text-secondary text-[18px]">Share Your Requirement On This Email:</span>
                         <a
                             href="mailto:reetchouksey004@gmail.com"
-                            className="text-white hover:text-[#915eff] text-[22px] font-bold transition-colors duration-300 border-b-2 border-[#915eff]"
+                            className="text-white hover:text-[#915eff] text-[16px] sm:text-[22px] font-bold transition-colors duration-300 border-b-2 border-[#915eff]"
+                            style={{ wordBreak: "break-all", overflowWrap: "break-word" }}
                         >
                             reetchouksey004@gmail.com
                         </a>

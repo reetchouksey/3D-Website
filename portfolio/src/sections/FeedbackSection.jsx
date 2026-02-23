@@ -37,9 +37,11 @@ const ReviewCard = ({ name, rating, comment, index }) => (
             padding: "24px",
             borderRadius: "16px",
             border: "1px solid rgba(255,255,255,0.07)",
-            flex: "1",
-            minWidth: "260px",
+            flex: "1 1 260px",
+            minWidth: 0,
+            width: "100%",
             maxWidth: "380px",
+            boxSizing: "border-box",
         }}
     >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
