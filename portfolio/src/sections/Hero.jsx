@@ -54,6 +54,7 @@ const Hero = () => {
                 </div>
             </nav>
 
+
             <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
 
 
@@ -64,6 +65,12 @@ const Hero = () => {
                     <p className={`${styles.heroSubText} mt-2 text-white-100`}>
                         I develop 3D visuals, user <br className="sm:block hidden" />
                         interfaces and web applications
+                    </p>
+                    <p className="mt-4 text-secondary text-[16px] sm:text-[18px] max-w-lg leading-relaxed">
+                        Passionate about crafting immersive digital experiences using <span className="text-[#915eff] font-semibold">React</span>, <span className="text-[#915eff] font-semibold">Three.js</span>, and modern web technologies.
+                    </p>
+                    <p className="mt-2 text-secondary text-[15px] sm:text-[16px] max-w-lg leading-relaxed">
+                        Turning complex ideas into elegant, performant, and visually stunning products — one line of code at a time.
                     </p>
                 </div>
             </div>
