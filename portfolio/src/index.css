@@ -1,6 +1,75 @@
 @import "tailwindcss";
 
+/* ===================================================================
+   Tailwind v4 Theme — replaces the old tailwind.config.js
+   =================================================================== */
+@theme {
+  --color-primary: #050816;
+  --color-secondary: #aaa6c3;
+  --color-tertiary: #151030;
+  --color-black-100: #100d25;
+  --color-black-200: #090325;
+  --color-white-100: #f3f3f3;
 
+  --font-sans: "Inter", sans-serif;
+
+  --breakpoint-xs: 450px;
+}
+
+/* ===================================================================
+   Custom Utility Classes
+   =================================================================== */
+
+/* Gradient backgrounds */
+.green-pink-gradient {
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+.black-gradient {
+  background: #1d1836;
+  background: linear-gradient(180deg,
+      rgba(39, 35, 67, 1) 0%,
+      rgba(12, 10, 29, 1) 100%);
+}
+
+/* Text gradients */
+.blue-text-gradient {
+  background: linear-gradient(97.86deg, #a855f7 -10.87%, #6366f1 186.42%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.green-text-gradient {
+  background: linear-gradient(97.86deg, #56d77d -10.87%, #00f2fe 186.42%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pink-text-gradient {
+  background: linear-gradient(97.86deg, #ec4899 -10.87%, #a855f7 186.42%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card shadow */
+.shadow-card {
+  box-shadow: 0px 35px 120px -15px #211e35;
+}
+
+/* Hash-span for smooth scroll offset */
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+/* ===================================================================
+   Base Styles
+   =================================================================== */
 html,
 body,
 #root {
@@ -9,12 +78,13 @@ body,
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #050816;
+  background-color: #050816 !important;
 }
 
-
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -24,4 +94,14 @@ body,
 ::-webkit-scrollbar-thumb {
   background: #915eff;
   border-radius: 5px;
+}
+
+/* Utility to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

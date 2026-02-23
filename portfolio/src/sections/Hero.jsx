@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
+import { menu, close } from "../assets";
 
 const Hero = () => {
+    const [toggle, setToggle] = useState(false);
     return (
         <section className="relative w-full h-screen mx-auto">
 
@@ -13,16 +16,41 @@ const Hero = () => {
                         <span className="text-white text-[18px] font-bold cursor-pointer flex">Reet Chouksey &nbsp; <span className="sm:block hidden">| 3D Portfolio</span></span>
                     </div>
                     <ul className="list-none hidden sm:flex flex-row gap-10">
-                        <li className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer">
-                            <a href="#about">About</a>
-                        </li>
-                        <li className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer">
-                            <a href="#work">Work</a>
-                        </li>
-                        <li className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer">
-                            <a href="#contact">Contact</a>
-                        </li>
+                        {["about", "work", "contact"].map((nav) => (
+                            <li
+                                key={nav}
+                                className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer"
+                            >
+                                <a href={`#${nav}`}>{nav.charAt(0).toUpperCase() + nav.slice(1)}</a>
+                            </li>
+                        ))}
                     </ul>
+
+                    {/* Mobile Menu */}
+                    <div className="sm:hidden flex flex-1 justify-end items-center">
+                        <img
+                            src={toggle ? close : menu}
+                            alt="menu"
+                            className="w-[28px] h-[28px] object-contain cursor-pointer"
+                            onClick={() => setToggle(!toggle)}
+                        />
+
+                        <div className={`${!toggle ? "hidden" : "flex"} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+                            <ul className="list-none flex justify-end items-start flex-col gap-4">
+                                {["about", "work", "contact"].map((nav) => (
+                                    <li
+                                        key={nav}
+                                        className="font-poppins font-medium cursor-pointer text-[16px] text-white"
+                                        onClick={() => {
+                                            setToggle(!toggle);
+                                        }}
+                                    >
+                                        <a href={`#${nav}`}>{nav.charAt(0).toUpperCase() + nav.slice(1)}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </nav>
 

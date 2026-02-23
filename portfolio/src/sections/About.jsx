@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import { Tilt } from "react-tilt";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import SectionWrapper from "../hoc/SectionWrapper";
@@ -57,11 +56,13 @@ const About = () => {
             {/* 3D Scroll Container */}
             <div
                 ref={scrollRef}
-                className="mt-20 flex overflow-x-auto gap-10 py-10 px-10 snap-x snap-mandatory hide-scrollbar perspective-container"
+                className="mt-20 flex flex-nowrap overflow-x-auto gap-10 py-10 px-10 snap-x snap-mandatory hide-scrollbar perspective-container"
                 style={{ perspective: '1000px' }}
             >
                 {services.map((service, index) => (
-                    <ServiceCard key={service.title} index={index} {...service} />
+                    <div key={service.title} className="flex-shrink-0 snap-center">
+                        <ServiceCard index={index} {...service} />
+                    </div>
                 ))}
             </div>
         </>

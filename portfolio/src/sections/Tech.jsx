@@ -11,17 +11,9 @@ import {
     redux,
     tailwind,
     nodejs,
-    //   mongodb,
     git,
     figma,
     docker,
-    //   meta,
-    //   starbucks,
-    //   tesla,
-    //   shopify,
-    //   carrent,
-    //   jobit,
-    //   tripguide,
     threejs,
 } from "../assets";
 
@@ -42,11 +34,11 @@ const technologies = [
 
 const Tech = () => {
     return (
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="flex flex-row flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-10 overflow-x-auto sm:overflow-visible pb-10 sm:pb-0 snap-x snap-mandatory hide-scrollbar">
             {technologies.map((technology) => (
-                <div className="w-28 h-28" key={technology.name}>
+                <div className="w-28 h-28 flex-shrink-0 snap-center flex flex-col items-center justify-center" key={technology.name}>
                     <BallCanvas icon={technology.icon} />
-                    <p className="text-center text-secondary text-sm mt-2">{technology.name}</p>
+                    <p className="text-center text-secondary text-sm mt-2 sm:hidden block">{technology.name}</p>
                 </div>
             ))}
         </div>
