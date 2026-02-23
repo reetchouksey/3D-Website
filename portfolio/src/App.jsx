@@ -6,6 +6,7 @@ import Experience from "./sections/Experience";
 import Tech from "./sections/Tech";
 import Works from "./sections/Works";
 import Feedbacks from "./sections/Feedbacks";
+import FeedbackSection from "./sections/FeedbackSection";
 import Contact from "./sections/Contact";
 import ErrorBoundary from "./components/ErrorBoundary";
 
@@ -59,6 +60,7 @@ const App = () => {
           </ErrorBoundary>
           <Works />
           <Feedbacks />
+          <FeedbackSection />
 
           <div className="relative z-0">
             <Contact />

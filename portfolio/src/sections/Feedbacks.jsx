@@ -31,11 +31,38 @@ const testimonials = [
         image: "https://randomuser.me/api/portraits/women/6.jpg",
         email: "lisa@456.enterprises"
     },
+    {
+        testimonial:
+            "Rick's attention to detail and creative vision brought our project to a level we never imagined.",
+        name: "Jessica Tan",
+        designation: "Product Manager",
+        company: "Innovate AI",
+        image: "https://randomuser.me/api/portraits/women/7.jpg",
+        email: "jessica@innovate.ai"
+    },
+    {
+        testimonial:
+            "The 3D elements Rick integrated are a game changer. Our user engagement has skyrocketed!",
+        name: "Michael Chen",
+        designation: "Marketing Director",
+        company: "Future Tech",
+        image: "https://randomuser.me/api/portraits/men/8.jpg",
+        email: "michael@future.tech"
+    },
+    {
+        testimonial:
+            "Professional, responsive, and incredibly talented. Rick is the go-to developer for modern web apps.",
+        name: "Sophia Martinez",
+        designation: "CEO",
+        company: "Pixel Perfect",
+        image: "https://randomuser.me/api/portraits/women/9.jpg",
+        email: "sophia@pixel.perfect"
+    },
 ];
 
 const FeedbackCard = ({ index, testimonial, name, designation, company, image, email }) => (
     <div
-        className="bg-black-200/50 backdrop-blur-md p-10 rounded-3xl xs:w-[320px] w-full border border-white/10 margin-left-10"
+        className="bg-black-200/50 backdrop-blur-md p-6 rounded-3xl flex-1 min-w-[250px] border border-white/10"
     >
         {/* Replaced Quote with Name */}
         <p className="text-white font-bold text-[24px]">{name}</p>
@@ -66,16 +93,16 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image, e
 
 const Feedbacks = () => {
     return (
-        <div className="mt-12 bg-black-100 rounded-[20px]">
+        <div className="mt-12 bg-black-100">
             <div
-                className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}
+                className={`${styles.padding} bg-tertiary min-h-[300px]`}
             >
                 <motion.div variants={textVariant()}>
                     <p className={styles.sectionSubText}>What others say</p>
                     <h2 className={styles.sectionHeadText}>Testimonials</h2>
                 </motion.div>
             </div>
-            <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-col gap-7`}>
+            <div className={`-mt-20 pb-14 flex flex-row flex-wrap justify-center gap-10 px-6 sm:px-16`}>
                 {testimonials.map((testimonial, index) => (
                     <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
                 ))}
@@ -84,4 +111,4 @@ const Feedbacks = () => {
     );
 };
 
-export default SectionWrapper(Feedbacks, "");
+export default SectionWrapper(Feedbacks, "feedbacks", "w-full mx-auto", false);
