@@ -17,7 +17,7 @@ const ServiceCard = ({ index, title, icon }) => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.5 }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.5 }}
                 className="w-full h-full green-pink-gradient p-[1px] rounded-[20px] shadow-card transform-style-3d transition-transform duration-500 hover:scale-105"
             >
