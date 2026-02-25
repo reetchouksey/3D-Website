@@ -68,9 +68,62 @@
 }
 
 /* ===================================================================
+   3D Shining Star Animations
+   =================================================================== */
+
+/* Twinkle keyframe — used by CSS star dots on mobile */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+/* Cross / lens-flare sparkle on big hero stars */
+@keyframes sparkle {
+  0% {
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 8px 4px rgba(200, 180, 255, 0.9), 0 0 20px 8px rgba(150, 100, 255, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Mobile CSS star overlay */
+.mobile-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.mobile-stars span {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: twinkle linear infinite;
+}
+
+/* ===================================================================
    Base Styles
    =================================================================== */
-html,
+html {
+  background-color: #050816;
+}
+
 body,
 #root {
   width: 100%;
@@ -78,7 +131,14 @@ body,
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #050816 !important;
+  background-color: transparent;
+}
+
+/* Make navbar semi-transparent so stars show through */
+nav.bg-primary {
+  background-color: rgba(5, 8, 22, 0.6) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Custom scrollbar */
